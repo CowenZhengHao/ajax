@@ -8,12 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>XHR的定义</h1>
+        <h1>请求成功</h1>
     </div>
 </body>
 </html>
 <script>
     const xhr=new XMLHttpRequest();
     xhr.open("GET","http://localhost:3000/1");
-
+    xhr.send();
+    xhr.onload=function(){
+        console.log("成功请求")
+    }
 </script>

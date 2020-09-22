@@ -8,12 +8,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>XHR的定义</h1>
+        <h1>readyState和onreadystatechange</h1>
     </div>
 </body>
 </html>
 <script>
     const xhr=new XMLHttpRequest();
+    console.log(0,"请求未初始化")
     xhr.open("GET","http://localhost:3000/1");
-
+    console.log(1,"服务器连接已建立");
+    xhr.send();
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState); //依次 2 3 4
+        if(xhr.readyState=="4"){
+            console.log("请求成功")
+        }
+    }
 </script>
